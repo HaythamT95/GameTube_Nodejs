@@ -15,4 +15,14 @@ routerGame.get('/all_games', async (req, res) => {
     }
 })
 
+
+routerGame.get('/game_by_id/:id', async (req, res) => {
+    try {
+        const game = await Game.findById(req.params.id);
+        res.status(200).json({ game: game });
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+})
+
 export default routerGame;
