@@ -37,11 +37,13 @@ const createRandomGames = async (numGames = 20) => {
             const gameName = faker.word.words(3); // Generates a random game name
             const categories = faker.helpers.arrayElements(predefinedCategories, faker.number.int({ min: 1, max: 2 }));
             const img = faker.image.url();
+            const description = faker.lorem.words({ min: 15, max: 30 });
 
             const game = new Game({
                 gameName,
                 categories,
-                img
+                img,
+                description
             });
 
             games.push(game);

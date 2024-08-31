@@ -10,6 +10,9 @@ const gameSchema = new Schema({
     }],
     img: {
         type: String
+    },
+    description: {
+        type: String
     }
 });
 
